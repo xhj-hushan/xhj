@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="t">
+  <title id="t">网络通信示例封面</title>
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#213b4b"/><stop offset="1" stop-color="#6b8994"/></linearGradient></defs>
+  <rect width="720" height="420" fill="url(#g)"/>
+  <path d="M442 103 560 71l111 107-70 129-142-23-68-100z" fill="none" stroke="#d9e8ec" stroke-width="2" opacity=".3"/>
+  <path d="m442 103 159 204M560 71l-101 213m212-106-280 6" fill="none" stroke="#d9e8ec" stroke-width="2" opacity=".28"/>
+  <g fill="#d9e8ec"><circle cx="442" cy="103" r="7"/><circle cx="560" cy="71" r="7"/><circle cx="671" cy="178" r="7"/><circle cx="601" cy="307" r="7"/><circle cx="459" cy="284" r="7"/><circle cx="391" cy="184" r="7"/></g>
+  <text x="62" y="102" fill="#ccdde2" font-family="Arial,sans-serif" font-size="20" letter-spacing="5">NETWORK / 05</text>
+  <text x="60" y="248" fill="#fff" font-family="Arial,sans-serif" font-size="80" font-weight="700" letter-spacing="-4">ROUTING</text>
+  <path d="M62 278h194" stroke="#d3e4e8" stroke-width="4"/>
+</svg>

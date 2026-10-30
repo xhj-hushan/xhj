@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="t">
+  <title id="t">故障排查示例封面</title>
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#554135"/><stop offset="1" stop-color="#a47d63"/></linearGradient></defs>
+  <rect width="720" height="420" fill="url(#g)"/>
+  <path d="M432 275h38l28-70 35 105 27-68h39l26-77 33 110h62" fill="none" stroke="#f8e3d1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  <text x="62" y="102" fill="#eddbcd" font-family="Arial,sans-serif" font-size="20" letter-spacing="5">DIAGNOSIS / 04</text>
+  <text x="60" y="248" fill="#fff" font-family="Arial,sans-serif" font-size="77" font-weight="700" letter-spacing="-4">DEBUG</text>
+  <path d="M62 278h194" stroke="#f2dfd2" stroke-width="4"/>
+</svg>

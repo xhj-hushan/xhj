@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="徐红军的技术博客，记录 Linux 运维、容器、网络与自动化部署。">
+  <title>技术博客</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=20261028d">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="logo" href="index.html">XHJ<span class="brand-name"></span></a>
+      <nav id="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="projects.html">游戏</a>
+        <a class="active" href="blog.html" aria-current="page">博客</a>
+        <a href="life.html">生活</a>
+        <a href="about.html">关于</a>
+      </nav>
+      <button id="menu" class="menu" type="button" aria-label="展开菜单" aria-expanded="false"><span class="menu-lines" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <main class="simple-page wrap journal-page blog-page">
+    <p class="eyebrow"></p>
+    <h1>技术博客</h1>
+    <p>网络是我的技术起点。这里记录网络、系统运维与开发中的知识和问题。</p>
+    <div class="blog-topics" aria-label="快速查看网络文章">
+      <span>从网络开始</span>
+      <a href="#network">网络基础</a>
+      <a href="#network-security">网络安全</a>
+    </div>
+
+    <div class="blog-list">
+      <article class="entry blog-entry" id="docker">
+        <img class="entry-image" src="assets/note-docker.jpg" alt="Docker 文章示例配图" width="480" height="270" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">容器部署 <span></span></p>
+          <h2>从零部署一个 Docker Web 服务</h2>
+          <p class="post-summary">从构建镜像到运行容器，整理一套清晰、可重复的部署步骤。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>以这个个人网站为例，应用本身是静态页面，镜像只需要 Nginx。Dockerfile 固定使用 <code>nginx:1.27-alpine</code>，把 HTML、CSS、JS、图片和音乐文件复制到站点目录；<code>nginx/default.conf</code> 用 <code>try_files $uri $uri/ =404</code> 处理路径，避免资源缺失时错误地返回首页。构建前先核对资源清单：漏复制一张图片，本地双击页面可能正常，容器中却会变成 404。</p>
+              <p>本地验证可执行 <code>docker build -t xhj-homepage:1.0 .</code>，再以 <code>-p 8088:80</code> 启动。先用 <code>docker ps</code> 看容器是否运行，再用 <code>curl -I http://127.0.0.1:8088/</code> 看首页响应；图片、CSS、JS 也要各抽查一个具体路径。容器的健康检查只请求首页，因此“healthy”并不能代替资源检查。</p>
+              <p>曾经容易忽略的点是“端口能访问”与“页面完整”是两件事：HTML 返回 200，但静态资源路径不对时仍会出现空白图片或缺少样式。排查时打开浏览器 Network，记录失败 URL，再对照 Dockerfile 的复制路径和 Nginx 根目录，而不是盲目重建镜像。更新时给镜像新标签，确认新版本可用后再替换旧容器，并保留上一版本以便回滚。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="kubernetes">
+        <img class="entry-image" src="assets/note-kubernetes.jpg" alt="Kubernetes 文章示例配图" width="480" height="270" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">容器编排 <span></span></p>
+          <h2>Kubernetes 实验笔记：从 Pod 到 Service</h2>
+          <p class="post-summary">一份可复现的实验路径：副本正常运行，访问却失败时该查哪一层。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>这篇是实验记录，不对应本站线上架构；个人网站当前仍由 Docker 和 Nginx 提供服务。实验可以从一个 Nginx Deployment 开始，给 Pod 标记 <code>app: web-demo</code>，再创建选择相同标签的 ClusterIP Service。Deployment 管理副本和滚动更新，Service 提供稳定的集群内入口；两者之间靠 selector 连接。</p>
+              <p>最典型的现象是 <code>kubectl get pods</code> 显示 Running，但访问 Service 仍失败。此时先运行 <code>kubectl get endpoints web-demo</code>：如果没有后端地址，重点检查 Service selector 是否与 Pod 标签完全一致；若有地址，再核对 <code>port</code>、<code>targetPort</code> 和容器实际监听端口。<code>kubectl describe pod</code> 能看到调度与探针事件，<code>kubectl logs</code> 用来判断应用是否启动。</p>
+              <p>验证顺序可以固定为“Pod 内访问自身 → 集群内访问 Service → 端口转发到本机”。例如用 <code>kubectl port-forward service/web-demo 8080:80</code> 测试时，若本机能打开，说明 Service 至 Pod 的链路基本成立；外部仍不通，就该检查 Ingress、负载均衡或防火墙。这种分层验证能避免把入口问题误判成容器问题。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="linux">
+        <img class="entry-image" src="assets/blog-linux.svg" alt="Linux 运维主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">Linux 运维 <span></span></p>
+          <h2>Linux 服务器上线前的检查清单</h2>
+          <p class="post-summary">系统时间、磁盘、权限、防火墙与服务状态，逐项检查更安心。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>上线前我会先记录系统版本、内核、时区和时间同步状态，再看磁盘容量与挂载点。<code>df -h</code> 只能告诉我容量，<code>df -i</code> 还会暴露 inode 用尽的问题；日志目录、容器数据目录也要确认确实落在预期磁盘上。时间不准会影响 TLS 证书校验和日志对时，排障时尤其容易造成误判。</p>
+              <p>接着检查登录与网络边界：确认普通管理账号能够登录，SSH 配置与密钥可用，防火墙只放行需要的端口。部署容器前执行 <code>ss -lntp</code>，看 80、443 或计划使用的端口是否已有进程占用；若服务通过反向代理访问，后端端口优先只绑定本机地址。</p>
+              <p>应用启动后再做一次从外到内的验证：系统服务或容器是否运行，监听地址是否正确，本机 <code>curl</code> 能否返回预期内容，域名和 HTTPS 是否正常。曾遇到的常见误区是只看 <code>systemctl status</code> 或 <code>docker ps</code> 就认为上线完成；进程运行不代表请求路径、证书和静态资源都正确。把这些检查项保存在发布记录中，下次迁移或更新时就有可对照的基线。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="nginx">
+        <img class="entry-image" src="assets/blog-nginx.svg" alt="Nginx 反向代理主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">Web 服务 <span></span></p>
+          <h2>Nginx 反向代理配置与常见排查</h2>
+          <p class="post-summary">从域名、HTTPS 到上游服务，梳理访问失败时的检查顺序。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>个人网站的容器内 Nginx 监听 80，宿主机可以把它映射到 <code>127.0.0.1:8088</code>，再由对外的 Nginx 或 Caddy 负责 HTTPS 和域名入口。定位问题时，我先在宿主机执行 <code>curl -I http://127.0.0.1:8088/</code>：这里失败，先查容器、端口映射和容器日志；这里成功而域名失败，再查 DNS、证书和外层代理。</p>
+              <p>502 通常意味着代理没有从上游拿到有效响应。先核对 <code>proxy_pass</code> 指向的是宿主机可访问的地址，再用 <code>ss -lntp</code> 看端口监听；容器之间互访还需确认网络与服务名。若首页能打开而图片 404，就从浏览器 Network 复制失败 URL，与 Nginx 的 <code>root</code>、<code>location</code> 和镜像里的文件路径逐一比对。</p>
+              <p>改配置后先运行 <code>nginx -t</code>，语法通过再平滑加载。还有一个容易漏掉的点是 WebSocket：游戏服务使用 Socket.IO，外层代理若没有传递 Upgrade 和 Connection 头，普通页面可能正常，实时连接却无法建立。验证时要单独检查连接握手，不能只测首页的 200 状态码。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="automation">
+        <img class="entry-image" src="assets/blog-automation.svg" alt="自动化部署主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">自动化部署 <span></span></p>
+          <h2>GitHub Actions 部署流程设计笔记</h2>
+          <p class="post-summary">从现有 Docker 发布步骤出发，设计能检查、构建、验证和回滚的流水线。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>本站仓库目前没有 GitHub Actions 工作流，现行发布步骤写在 README：构建镜像、停止旧容器、启动新容器并验证。把它自动化之前，我会先拆成独立关卡：检查 HTML 引用的本地资源是否存在，检查 JS 语法，构建 Docker 镜像，然后在临时容器中请求首页及几条关键资源路径。前一步失败就停止，不继续发布。</p>
+              <p>发布阶段不能只用 <code>latest</code>。更稳妥的是用提交 SHA 或版本号标记镜像，记录“当前版本 → 新版本”的对应关系。部署凭据放在 GitHub Environment 的 secrets 中，生产环境需要单独的保护规则；脚本只拿到这次发布所需的最小权限。发布后检查容器健康状态，再用浏览器或 HTTP 请求验证首页、游戏页和证书图片。</p>
+              <p>有个值得提前处理的失败点：如果先删除旧容器，再发现新镜像缺文件，就会出现本可避免的中断。流水线应先构建并验证新镜像，保留旧版本标签，再执行切换。这个流程目前是设计稿，待真正落地后会补上工作流文件、一次失败日志和回滚记录。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="troubleshooting">
+        <img class="entry-image" src="assets/blog-troubleshooting.svg" alt="服务排障主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">故障排查 <span></span></p>
+          <h2>服务突然不可用时，我会先看什么</h2>
+          <p class="post-summary">从现象、范围和最近变更入手，再用日志与指标缩小范围。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>我先把“不可用”拆成可验证的现象：是整站打不开，还是只有某个页面、图片、实时连接或音乐失败？同一时间分别测试域名入口、宿主机回环地址和容器内部响应。若域名失败但 <code>127.0.0.1:8088</code> 正常，范围就缩到了 DNS、证书或反向代理；若容器内部也失败，再看应用和镜像内容。</p>
+              <p>接着查看最近变更和运行状态：<code>docker ps</code> 看容器是否重启，<code>docker logs --tail 100</code> 看启动错误，<code>df -h</code> 看磁盘，<code>ss -lntp</code> 看监听端口。对于游戏，还要分别验证静态页面、HTTP 接口和 Socket.IO 连接；“能看到牌桌”不代表房间同步正常。将失败时间与 Nginx access/error log 对齐，通常可以判断请求到底停在哪一层。</p>
+              <p>修复前尽量保留日志和现象，避免边猜边改造成第二个故障。恢复后把“触发条件、影响范围、定位证据、修复动作、验证结果”写成短记录。比如图片 404 的根因是镜像漏复制目录，就把资源检查加入发布步骤；如果是上游端口错误，就把本机健康请求放进部署验证。排障的结果应该反过来改进流程。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="network">
+        <img class="entry-image" src="assets/blog-network.svg" alt="网络通信主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">网络基础 <span></span></p>
+          <h2>从交换到路由：一次访问是怎样到达服务器的</h2>
+          <p class="post-summary">从域名解析、局域网转发到跨网段路由，梳理一次常见的访问路径。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>浏览器访问域名时，先查 DNS 获得目标地址，再建立 TCP 连接，HTTPS 还要完成 TLS 握手。主机发送数据包之前会根据路由表判断目标是否在本地网段；跨网段时交给默认网关。局域网内，ARP 负责把下一跳的 IP 对应到 MAC，交换机再按 MAC 地址转发帧。理解这条路径后，“页面打不开”就能拆成几个不同的问题，而不是笼统地说网络不通。</p>
+              <p>我常按固定顺序检查：<code>nslookup</code> 或 <code>dig</code> 看解析结果，<code>ip route</code> 看路由，<code>ping</code> 或 <code>traceroute</code> 辅助判断可达性，再用 <code>curl -v</code> 看 TCP、TLS 和 HTTP 各停在何处。ICMP 被禁用时 ping 不通不等于 Web 服务不通，因此最终还要测目标端口。浏览器能连 IP、不能连域名，重点查 DNS；能解析但连接超时，重点查路由、防火墙和监听地址。</p>
+              <p>以容器里的站点为例，还多了一层端口映射：公网请求先到宿主机代理，再到 <code>127.0.0.1:8088</code>，最后进入容器 80 端口。若本机 8088 正常而外部失败，应先看云安全组、主机防火墙和反向代理；若域名打开的仍是旧页面，再核对 DNS 指向、代理配置及浏览器缓存。这种逐跳验证能把“网络故障”缩成一个具体的断点。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="entry blog-entry" id="network-security">
+        <img class="entry-image" src="assets/blog-network-security.svg" alt="网络安全主题示例配图" width="720" height="420" loading="lazy">
+        <div class="post-copy">
+          <p class="post-meta">网络安全 <span></span></p>
+          <h2>网络安全入门：先缩小暴露面，再做好分层防护</h2>
+          <p class="post-summary">围绕网络分区、最小权限、加密和日志，建立一套基础防护思路。</p>
+          <details class="post-details">
+            <summary>阅读正文</summary>
+            <div class="post-body">
+              <p>我做安全检查时先画出真实入口：公网 80/443、主机管理端口、容器映射端口，以及游戏服务的接口和实时连接。个人网站容器只需要接收来自宿主机反向代理的请求，因此建议把 8088 绑定在 <code>127.0.0.1</code>，让外部只访问 HTTPS 入口。这样即使容器服务本身没有鉴权，也不会因为端口映射而多暴露一个直连入口。</p>
+              <p>下一步核对配置边界。Nginx 关闭版本号展示，设置 <code>X-Content-Type-Options: nosniff</code> 和 Referrer-Policy；静态资源路径明确返回 404，避免错误文件被当作页面返回。证书图片使用遮挡二维码和编号的公开副本，原图目录由 <code>.dockerignore</code> 排除，不进入镜像。这个细节比仅在网页上用 CSS 覆盖更可靠，因为访客仍可直接下载原始图片。</p>
+              <p>最后检查权限、更新和证据。部署账号只保留必要权限，密钥不写进仓库，系统与容器基础镜像按计划更新；访问日志和错误日志要能定位异常请求，备份要实际验证可恢复。安全不是一次性设置：每增加一个服务、端口或上传目录，都要重新检查它是否真的需要对外开放，以及错误配置会把什么数据暴露出去。</p>
+            </div>
+          </details>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer><div class="wrap foot"><span>©2026设计by · XHJ</span><div class="footer-records"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026055513号-2</a><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51011502001360" target="_blank" rel="noopener noreferrer">川公网安备51011502001360号</a></div><a class="footer-return" href="index.html">返回首页</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

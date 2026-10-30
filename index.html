@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="徐红军 XHJ 的个人网站，记录 Linux 运维、DevOps 项目与生活。">
+  <title>个人主页</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=20261028d">
+</head>
+<body class="home-page">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="徐红军首页">XHJ<span class="brand-name"></span></a>
+      <nav id="nav" aria-label="主导航">
+        <a class="active" href="index.html" aria-current="page">首页</a>
+        <a href="projects.html">游戏</a>
+        <a href="blog.html">博客</a>
+        <a href="life.html">生活</a>
+        <a href="about.html">关于</a>
+      </nav>
+      <button id="menu" class="menu" type="button" aria-label="展开菜单" aria-expanded="false"><span class="menu-lines" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="showcase-intro wrap" aria-labelledby="home-title">
+      <h1 id="home-title">你好，我是徐红军。<br><span></span></h1>
+      <p class="showcase-lead">做网络、Linux 运维和 DevOps，也在开发自己的在线游戏。</p>
+      <div class="showcase-actions">
+        <a class="btn primary" href="about.html">关于我</a>
+        <a class="text-link" href="projects.html">了解游戏</a>
+      </div>
+    </section>
+
+    <section class="showcase-photo wrap" aria-label="个人介绍图片">
+      <div class="showcase-photo-frame">
+        <img class="showcase-landscape" src="assets/hero-landscape.jpg" alt="城市夕阳背景下的人像示例图，可替换为自己的照片" width="1760" height="894" fetchpriority="high">
+        <div class="showcase-photo-caption">
+        </div>
+      </div>
+      <p class="photo-hint"></p>
+    </section>
+
+    <section class="showcase-belief wrap" aria-labelledby="belief-title">
+      <p class="eyebrow"></p>
+      <h2 id="belief-title">从服务器到游戏，<br><span>持续动手实践。</span></h2>
+      <p>我关注网络、Linux 系统运维、Docker 和K8S技术，自己做的升级和斗地主游戏已强势上线，目前拥有超过50位玩家。这个网站记录生活，以及分享我在工作中解决过的问题。</p>
+      <div class="belief-grid">
+        <article><span>Linux / DevOps/ Network</span><h3>维护与部署</h3><p>记录服务部署、容器化和排障过程中的做法。</p></article>
+        <article><span>Online Games</span><h3>升级与斗地主</h3><p>从玩法到交互，持续打磨正在运行的在线游戏。</p></article>
+        <article><span>Daily Life</span><h3>工作之外</h3><p>偶尔拍照、旅行，也记下普通的日常。</p></article>
+      </div>
+    </section>
+
+    <section class="showcase-moments" aria-labelledby="moments-title">
+      <div class="wrap">
+        <div class="moments-heading">
+          <div><p class="eyebrow"></p><h2 id="moments-title">工作之外的日常。</h2></div>
+          <a class="text-link" href="life.html">生活记录</a>
+        </div>
+        <div class="moments-grid">
+          <figure><img src="assets/home-workspace.jpg" alt="技术主题示例横幅" loading="lazy" width="480" height="270"><figcaption>专注当下</figcaption></figure>
+          <figure><img src="assets/home-outdoors.jpg" alt="湖边日落示例横幅" loading="lazy" width="480" height="270"><figcaption>走进生活</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>©2026设计by · XHJ</span><div class="footer-records"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026055513号-2</a><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51011502001360" target="_blank" rel="noopener noreferrer">川公网安备51011502001360号</a></div><a class="footer-return" href="#home">回到顶部</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="t">
+  <title id="t">Linux 运维示例封面</title>
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#20394c"/><stop offset="1" stop-color="#54758a"/></linearGradient></defs>
+  <rect width="720" height="420" fill="url(#g)"/>
+  <circle cx="584" cy="100" r="180" fill="#fff" opacity=".045"/>
+  <path d="M0 330c152-60 248-17 380-73 126-54 228-26 340-89v252H0z" fill="#0d2839" opacity=".36"/>
+  <text x="62" y="102" fill="#b8d0da" font-family="Arial,sans-serif" font-size="20" letter-spacing="5">OPERATIONS / 01</text>
+  <text x="60" y="248" fill="#fff" font-family="Arial,sans-serif" font-size="82" font-weight="700" letter-spacing="-4">LINUX</text>
+  <path d="M62 278h194" stroke="#a9c8d7" stroke-width="4"/>
+</svg>

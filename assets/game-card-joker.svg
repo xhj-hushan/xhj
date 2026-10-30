@@ -1,0 +1,35 @@
+<svg width="256" height="256" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- 1. 左侧橙色帽角 -->
+  <path fill="#F39C12" d="M6 6h3v1H6z M5 7h1v3H5z M9 7h1v1H9z"/>
+  <!-- 2. 右侧橙色帽角 -->
+  <path fill="#F39C12" d="M23 6h3v1h-3z M26 7h1v3h-1z M22 7h1v1h-1z"/>
+  
+  <!-- 3. 红色主帽 -->
+  <path fill="#E74C3C" d="M15 2h2v1h-2z M14 3h4v1h-4z M13 4h6v1h-6z M12 5h8v1h-8z M11 6h10v1H11z M11 7h10v1H11z M12 8h8v1h-8z M13 9h6v1h-6z"/>
+  <!-- 帽子上的白球 -->
+  <path fill="#FFFFFF" d="M16 1h2v1h-2z M17 2h2v1h-2z"/>
+
+  <!-- 4. 脸部底色 -->
+  <path fill="#FAD7A1" d="M12 10h8v1h-8z M11 11h10v1H11z M11 12h10v1H11z M11 13h10v1H11z M12 14h8v1h-8z M12 15h8v1h-8z"/>
+
+  <!-- 5. 五官：黄色眼睛 + 红色大笑脸 + 白牙 -->
+  <!-- 眼睛 -->
+  <path fill="#F1C40F" d="M12 11h1v2h-1z M19 11h1v2h-1z"/>
+  <!-- 红色嘴巴轮廓 -->
+  <path fill="#E74C3C" d="M13 13h6v1h-6z M14 14h4v1h-4z"/>
+  <!-- 白色牙齿 -->
+  <path fill="#FFFFFF" d="M14 13h4v1h-4z"/>
+
+  <!-- 6. 蓝色身体领子 -->
+  <path fill="#3498DB" d="M13 16h6v1h-6z M11 17h10v1H11z M10 18h12v1H10z M9 19h14v1H9z M8 20h16v1H8z M7 21h18v1H7z M6 22h20v1H6z M6 23h20v1H6z"/>
+  
+  <!-- 7. 领子上的白色花纹 -->
+  <path fill="#E0F7FA" d="M12 18h2v1h-2z M18 18h2v1h-2z M11 19h3v1h-3z M18 19h3v1h-3z M10 20h4v1h-4z M18 20h4v1h-4z M9 21h4v1H9z M19 21h4v1h-4z M8 22h4v1H8z M20 22h4v1h-4z M7 23h5v1H7z M20 23h5v1h-5z"/>
+
+  <!-- 8. 红色小手 -->
+  <path fill="#E74C3C" d="M5 23h2v1H5z M4 24h2v1H4z M25 23h2v1h-2z M26 24h2v1h-2z"/>
+
+  <!-- 9. 灰色腿脚 -->
+  <path fill="#7F8C8D" d="M11 24h1v2h-1z M20 24h1v2h-1z"/>
+  <path fill="#7F8C8D" d="M11 26h2v1h-2z M19 26h2v1h-2z"/>
+</svg>

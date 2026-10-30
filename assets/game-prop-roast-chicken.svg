@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" aria-hidden="true">
+  <defs>
+    <linearGradient id="dish" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fffdf3"/>
+      <stop offset="1" stop-color="#beb7aa"/>
+    </linearGradient>
+    <radialGradient id="roast" cx=".36" cy=".21" r=".82">
+      <stop stop-color="#ffd987"/>
+      <stop offset=".3" stop-color="#e7a04d"/>
+      <stop offset=".7" stop-color="#ad5728"/>
+      <stop offset="1" stop-color="#74371d"/>
+    </radialGradient>
+    <linearGradient id="drumstick" x1="0" y1="0" x2=".8" y2="1">
+      <stop stop-color="#ffd37b"/>
+      <stop offset=".45" stop-color="#d88132"/>
+      <stop offset="1" stop-color="#95421f"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="48" cy="83" rx="44" ry="8" fill="#211919" opacity=".28"/>
+  <ellipse cx="48" cy="76" rx="45" ry="12" fill="url(#dish)" stroke="#847a70" stroke-width="2.7"/>
+  <ellipse cx="48" cy="73" rx="37" ry="6.5" fill="#f8f1dd" stroke="#bcb09d" stroke-width="1.5"/>
+  <path d="M12 70c5-3 11-2 15 0m42 0c5-2 10-3 15 0" fill="none" stroke="#63834d" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- The wide wings remain outside the central body silhouette at icon size. -->
+  <path d="M23 37C9 31 5 41 13 54c5 9 13 12 23 8l5-17Z" fill="url(#roast)" stroke="#67331e" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M73 37c14-6 18 4 10 17-5 9-13 12-23 8l-5-17Z" fill="url(#roast)" stroke="#67331e" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M15 44c2-3 5-4 9-2m57 0c-4-2-7-1-9 2" fill="none" stroke="#ffdc91" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+
+  <!-- Plump roast breast with a distinct golden glaze and dark lower edge. -->
+  <path d="M48 17c-18 0-30 13-30 31 0 16 12 25 30 25s30-9 30-25C78 30 66 17 48 17Z" fill="url(#roast)" stroke="#673019" stroke-width="3.4"/>
+  <path d="M29 39c3-10 10-16 20-16 9 0 16 6 19 16" fill="none" stroke="#ffe6a4" stroke-width="3.8" stroke-linecap="round" opacity=".82"/>
+  <path d="M32 56c5 6 11 9 16 9s11-3 16-9" fill="none" stroke="#74361f" stroke-width="2.5" stroke-linecap="round" opacity=".52"/>
+  <ellipse cx="36" cy="32" rx="6" ry="3" fill="#fff1bb" opacity=".45" transform="rotate(-28 36 32)"/>
+
+  <!-- Both drumsticks sit IN FRONT of the breast and point outward. -->
+  <path d="M39 51c-3-5-10-5-14 1-2 3-4 8-7 11l7 8c6-2 11-4 15-8 4-5 3-9-1-12Z" fill="url(#drumstick)" stroke="#69321d" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M57 51c3-5 10-5 14 1 2 3 4 8 7 11l-7 8c-6-2-11-4-15-8-4-5-3-9 1-12Z" fill="url(#drumstick)" stroke="#69321d" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M28 54c-2 3-3 6-4 9m44-9c2 3 3 6 4 9" fill="none" stroke="#ffe3a1" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+
+  <!-- High-contrast white bone ends make the cooked-bird shape unmistakable. -->
+  <path d="m20 66-9 8m65-8 9 8" fill="none" stroke="#684a38" stroke-width="7" stroke-linecap="round"/>
+  <path d="m20 66-9 8m65-8 9 8" fill="none" stroke="#fff9e9" stroke-width="4.6" stroke-linecap="round"/>
+  <circle cx="8.5" cy="75.5" r="3.4" fill="#fff9e9" stroke="#bfb3a0" stroke-width="1"/>
+  <circle cx="13.2" cy="78.4" r="3.1" fill="#fff9e9" stroke="#bfb3a0" stroke-width="1"/>
+  <circle cx="87.5" cy="75.5" r="3.4" fill="#fff9e9" stroke="#bfb3a0" stroke-width="1"/>
+  <circle cx="82.8" cy="78.4" r="3.1" fill="#fff9e9" stroke="#bfb3a0" stroke-width="1"/>
+</svg>

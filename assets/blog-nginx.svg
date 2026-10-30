@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="t">
+  <title id="t">Nginx 反向代理示例封面</title>
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#1c483f"/><stop offset="1" stop-color="#6d9680"/></linearGradient></defs>
+  <rect width="720" height="420" fill="url(#g)"/>
+  <circle cx="575" cy="203" r="156" fill="none" stroke="#c9e2d5" stroke-width="2" opacity=".22"/>
+  <circle cx="575" cy="203" r="106" fill="none" stroke="#c9e2d5" stroke-width="2" opacity=".24"/>
+  <circle cx="575" cy="203" r="56" fill="none" stroke="#c9e2d5" stroke-width="2" opacity=".3"/>
+  <text x="62" y="102" fill="#c9e1d7" font-family="Arial,sans-serif" font-size="20" letter-spacing="5">WEB SERVICE / 02</text>
+  <text x="60" y="248" fill="#fff" font-family="Arial,sans-serif" font-size="82" font-weight="700" letter-spacing="-4">NGINX</text>
+  <path d="M62 278h194" stroke="#c7dfd3" stroke-width="4"/>
+</svg>

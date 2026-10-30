@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spadeGradient" x1="30" y1="30" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#333333"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <path d="
+    M 64 16
+    C 64 16 14 54 14 84
+    C 14 100 28 108 47 98
+    C 53 95 59 89 64 84
+    C 62 97 57 107 46 116
+    L 82 116
+    C 71 107 66 97 64 84
+    C 69 89 75 95 81 98
+    C 100 108 114 100 114 84
+    C 114 54 64 16 64 16 Z"
+    fill="url(#spadeGradient)" />
+</svg>

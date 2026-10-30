@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title">
+  <title id="title">RHCE 证书图片示例占位图</title>
+  <rect width="720" height="500" rx="22" fill="#f6f6f4"/>
+  <rect x="22" y="22" width="676" height="456" rx="12" fill="#fff" stroke="#ddd9d4" stroke-width="2"/>
+  <path d="M22 22h676v16H22z" fill="#aa2634"/>
+  <text x="58" y="93" fill="#5e5e62" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="3">RED HAT</text>
+  <path d="M58 116h604" stroke="#e8e6e4" stroke-width="2"/>
+  <text x="58" y="236" fill="#1d1d1f" font-family="Arial,sans-serif" font-size="90" font-weight="700" letter-spacing="-4">RHCE</text>
+  <text x="62" y="282" fill="#55555a" font-family="Arial,sans-serif" font-size="23">Red Hat Certified Engineer</text>
+  <path d="M58 383h604" stroke="#e8e6e4" stroke-width="2"/>
+  <text x="58" y="429" fill="#9c9ca1" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">CERTIFICATE IMAGE PLACEHOLDER</text>
+  <text x="621" y="428" fill="#aa2634" font-family="Arial,sans-serif" font-size="18" font-weight="700">SAMPLE</text>
+</svg>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>关于我</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=20261028d">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="logo" href="index.html">XHJ<span class="brand-name"></span></a>
+      <nav id="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="projects.html">游戏</a>
+        <a href="blog.html">博客</a>
+        <a href="life.html">生活</a>
+        <a class="active" href="about.html">关于</a>
+      </nav>
+      <button id="menu" class="menu" aria-label="展开菜单" aria-expanded="false"><span class="menu-lines" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main class="simple-page wrap">
+    <p class="eyebrow"></p>
+    <h1>关于我</h1>
+    <p>我是徐红军，平时做网络、Linux 运维和 DevOps。</p>
+    <article class="entry">
+      <h2>工作与项目</h2>
+      <p>工作方向从网络起步，逐渐延伸到 Linux 运维、服务部署与 DevOps。做网络让我习惯先看清连接关系和数据流向：一个服务打不开，可能是路由、DNS、防火墙，也可能是应用本身或部署配置。遇到问题时，我更愿意沿着请求经过的每一层逐步验证，把现象、日志和配置放在一起看，直到找到原因。我更在意系统是否稳定、故障发生时能否快速定位，以及方案交给别人后是否容易维护。</p>
+      <p>我持续学习系统和网络相关技术，取得了 RHCE、HCIE Security 和 HCIP Datacom 认证。这些认证对我来说是学习记录，也提醒我把知识落实到实际操作中：从 Linux 服务管理、自动化配置，到网络连通、安全边界和日常排障，都需要在真实环境里反复检验。我会记录部署步骤和遇到的问题，尽量让流程清楚、结果可复现。容器化、Nginx、Node.js 等工具也是这样使用的：先理解服务如何运行，再考虑怎样让发布、更新和回滚更稳妥。</p>
+      <p>工作之外，我在开发自己的在线游戏，包括四人升级和四人斗地主。游戏既要把规则写准确，也要照顾玩家的体验：从房间和牌局状态，到 AI 练习、实时语音、音乐、道具互动和排行榜，每个功能都牵涉前端交互与服务端逻辑。我喜欢把想法做成可以打开、可以体验的页面，再根据实际使用中发现的问题慢慢调整。游戏服务单独部署，这个个人网站则用来介绍玩法、展示技术实现，也记录从浏览器到服务器的一整条运行链路。</p>
+      <p>我建立这个网站，是想给自己的学习和项目留一个持续更新的地方。这里会放我做过的游戏、网络与安全方面的笔记，以及部署和排障时总结的方法。很多经验并不是一次就能形成完整答案，而是在修改配置、检查日志、重现问题的过程中逐渐清晰。我希望以后回头看时，能知道当时为什么这样设计、问题如何解决；也希望来到这里的人，可以更直观地了解我在做什么，以及我怎样把技术应用到具体作品中。</p>
+    </article>
+    <section class="credentials" aria-labelledby="credentials-title">
+      <div class="credentials-heading">
+        <div>
+          <p class="eyebrow"></p>
+          <h2 id="credentials-title">专业认证</h2>
+        </div>
+        <p>系统运维与 ICT 技术</p>
+      </div>
+      <div class="credentials-grid">
+        <article class="credential-card">
+          <img class="credential-thumb" src="assets/certificate-rhce-public.jpg" alt="RHCE 证书，二维码和证书编号已遮挡" width="1085" height="837" loading="lazy">
+          <div class="credential-copy">
+            <span class="credential-issuer">RED HAT</span>
+            <h3>RHCE</h3>
+            <p>Red Hat Certified Engineer。面向 Red Hat Enterprise Linux 的系统管理与自动化实践。</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <img class="credential-thumb" src="assets/certificate-hcie-public.jpg" alt="HCIE 证书，证书编号已遮挡" width="1090" height="744" loading="lazy">
+          <div class="credential-copy">
+            <span class="credential-issuer">HUAWEI</span>
+            <h3>HCIE</h3>
+            <p>Huawei Certified ICT Expert。华为 ICT 认证体系中的专家级认证，侧重所选方向的设计、实施与排障能力。</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <img class="credential-thumb" src="assets/certificate-hcip-public.jpg" alt="HCIP 证书，证书编号已遮挡" width="975" height="707" loading="lazy">
+          <div class="credential-copy">
+            <span class="credential-issuer">HUAWEI</span>
+            <h3>HCIP</h3>
+            <p>Huawei Certified ICT Professional。华为 ICT 认证体系中的专业级认证，关注所选方向的技术应用与工程实践。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <article class="entry">
+      <h2>看看我做的游戏</h2>
+      <p><a href="https://game.xhj66.cn" target="_blank" rel="noopener noreferrer">打开游戏网站</a></p>
+    </article>
+  </main>
+  <footer><div class="wrap foot"><span>©2026设计by · XHJ</span><div class="footer-records"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026055513号-2</a><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51011502001360" target="_blank" rel="noopener noreferrer">川公网安备51011502001360号</a></div><a class="footer-return" href="index.html">返回首页</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

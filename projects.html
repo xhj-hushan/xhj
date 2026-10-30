@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>游戏</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=20261028d">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="logo" href="index.html">XHJ<span class="brand-name"></span></a>
+      <nav id="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a class="active" href="projects.html" aria-current="page">游戏</a>
+        <a href="blog.html">博客</a>
+        <a href="life.html">生活</a>
+        <a href="about.html">关于</a>
+      </nav>
+      <button id="menu" class="menu" aria-label="展开菜单" aria-expanded="false"><span class="menu-lines" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main class="simple-page wrap projects-page">
+    <p class="eyebrow"></p>
+    <h1>原创游戏</h1>
+    <p>两种四人牌局，同一个界面，两种玩法。和好友同桌，或先与AI练习。</p>
+
+    <h2 class="project-group-title">在线游戏</h2>
+    <div class="game-project-grid">
+      <article class="game-project" id="game">
+        <div class="game-project-visual upgrade-visual">
+          <img src="assets/game-upgrade-logo.png" alt="牛逼升级游戏标志">
+        </div>
+        <div class="game-project-body">
+          <p class="game-project-kicker"></p>
+          <h3>牛逼升级</h3>
+          <p>四人搭档，从 2 打到 A。亮主、抢分、带 A，步步升级。</p>
+          <div class="tags"><span>搭档对战</span><span>音乐服务</span><span>实时语音</span><span>趣味道具</span></div>
+          <a class="game-project-link" href="https://game.xhj66.cn" target="_blank" rel="noopener noreferrer">进入游戏</a>
+        </div>
+      </article>
+      <article class="game-project" id="doudizhu">
+        <div class="game-project-visual doudizhu-visual">
+          <img src="assets/game-doudizhu-avatar.png" alt="四人斗地主游戏角色">
+        </div>
+        <div class="game-project-body">
+          <p class="game-project-kicker"></p>
+          <h3>四人斗地主</h3>
+          <p>创新玩法，摇骰定地主，选朋友牌。队友身份逐渐揭晓，也可能一打三。</p>
+          <div class="tags"><span>找朋友</span><span>AI 练习</span><span>紧张刺激</span><span>多端同时畅玩</span></div>
+          <a class="game-project-link" href="https://game.xhj66.cn" target="_blank" rel="noopener noreferrer">进入游戏</a>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="project-group-title" id="experience">让牌桌更有趣</h2>
+    <div class="game-bento">
+      <article class="bento-card bento-music">
+        <div class="bento-copy"><span class="bento-kicker">Music</span><h3>边玩，边听。</h3><p>点击播放示例曲目。</p></div>
+        <div class="music-scene">
+          <div class="album-art" aria-hidden="true"><span></span></div>
+          <div class="music-player">
+            <div class="music-player-top"><span class="music-player-dot" aria-hidden="true"></span><b>Bad Romance</b><span class="music-player-state">点击播放</span></div>
+            <div class="music-player-controls">
+              <button class="music-toggle" type="button" aria-label="播放示例音乐" aria-pressed="false"><span aria-hidden="true">▶</span></button>
+              <div class="music-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="music-time">0:00</span>
+            </div>
+            <input class="music-progress" type="range" min="0" max="100" value="0" aria-label="音乐播放进度">
+            <audio class="music-audio" src="music/BadRomance.mp3" preload="none"></audio>
+          </div>
+        </div>
+      </article>
+      <article class="bento-card bento-voice">
+        <div class="bento-copy"><span class="bento-kicker">Voice</span><h3>开麦，同桌聊。</h3><p>房间实时语音。</p></div>
+        <div class="voice-scene">
+          <span class="voice-ring voice-ring-one" aria-hidden="true"></span><span class="voice-ring voice-ring-two" aria-hidden="true"></span>
+          <span class="voice-mic" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="25" y="8" width="14" height="31" rx="7"/><path d="M18 30c0 19 28 19 28 0M32 45v10m-9 0h18"/></svg></span>
+          <span class="voice-person voice-person-jerry"><img src="assets/voice-jerry.png" alt=""><b>Jerry</b></span>
+          <span class="voice-person voice-person-tom"><img src="assets/voice-tom.png" alt=""><b>Tom</b></span>
+          <span class="voice-person voice-person-nana"><img src="assets/voice-nana.png" alt=""><b>Nana</b></span>
+        </div>
+      </article>
+      <article class="bento-card bento-props">
+        <div class="bento-copy"><span class="bento-kicker">Interraction</span><h3>道具，替你表达。</h3><p>点一下，随机送给一位牌友。</p></div>
+        <div class="props-scene" aria-label="互动道具">
+          <button class="prop-option" type="button" data-prop="tomato" aria-label="扔番茄，随机选择一位牌友"><img src="assets/game-prop-tomato.svg" alt=""><span>扔番茄</span></button>
+          <button class="prop-option" type="button" data-prop="flower" aria-label="送鲜花，随机选择一位牌友"><img src="assets/game-prop-flower.svg" alt=""><span>鲜花</span></button>
+          <button class="prop-option" type="button" data-prop="turkey" aria-label="送烤鸡，随机选择一位牌友"><img src="assets/game-prop-roast-chicken.svg" alt=""><span>烤鸡</span></button>
+        </div>
+        <span class="prop-status" role="status" aria-live="polite"></span>
+      </article>
+      <article class="bento-card bento-ranking">
+        <div class="bento-copy"><span class="bento-kicker">Ranking</span><h3>胜场榜。</h3><p>排行榜展示</p></div>
+        <ol class="ranking-scene" aria-label="AI 玩家胜场展示">
+          <li class="ranking-row" data-player="jerry"><span class="rank-no">01</span><span class="rank-avatar"><img src="assets/voice-jerry.png" alt=""></span><span class="rank-name">Jerry</span><strong class="rank-score">37 <small>胜</small></strong></li>
+          <li class="ranking-row" data-player="tom"><span class="rank-no">02</span><span class="rank-avatar"><img src="assets/voice-tom.png" alt=""></span><span class="rank-name">Tom</span><strong class="rank-score">26 <small>胜</small></strong></li>
+          <li class="ranking-row" data-player="nana"><span class="rank-no">03</span><span class="rank-avatar"><img src="assets/voice-nana.png" alt=""></span><span class="rank-name">娜娜</span><strong class="rank-score">19 <small>胜</small></strong></li>
+        </ol>
+      </article>
+      <article class="bento-card bento-engine" id="technology">
+        <div class="bento-copy"><span class="bento-kicker">Game Enging</span><h3>规则，自己写。</h3><p>两套服务端规则逻辑。</p></div>
+        <div class="engine-scene" aria-label="游戏牌面：黑桃 A、大王、黑桃 K">
+          <span class="game-face" aria-hidden="true"><b class="game-face-rank">A</b><img class="game-face-suit" src="assets/game-card-spade.svg" alt=""><img class="game-face-center" src="assets/game-card-spade.svg" alt=""></span>
+          <span class="game-face game-face-joker" aria-hidden="true"><b class="game-face-rank">大王</b><img class="game-face-center" src="assets/game-card-joker.svg" alt=""></span>
+          <span class="game-face" aria-hidden="true"><b class="game-face-rank">K</b><img class="game-face-suit" src="assets/game-card-spade.svg" alt=""><img class="game-face-center" src="assets/game-card-spade.svg" alt=""></span>
+        </div>
+      </article>
+      <div class="bento-final-row">
+        <article class="bento-card bento-focus">
+          <div class="bento-copy"><span class="bento-kicker">Highlight</span><h3>灯光聚焦</h3><p>灯光，跟着这一轮的主角走。</p></div>
+          <svg class="focus-rail" viewBox="0 0 155 90" aria-hidden="true" focusable="false">
+            <path class="focus-rail-groove" d="M 31.61 44.37 A 125 32 0 0 1 120 35"/>
+            <path class="focus-rail-highlight" d="M 31.61 44.37 A 125 32 0 0 1 120 35"/>
+          </svg>
+          <span class="voice-focus-lamp" aria-hidden="true"><span class="voice-focus-beam"></span></span>
+          <div class="focus-controls" aria-label="选择聚焦的牌友">
+            <button type="button" class="focus-person is-active" data-focus="jerry" aria-pressed="true"><img src="assets/voice-jerry.png" alt=""><span>Jerry</span></button>
+            <button type="button" class="focus-person" data-focus="tom" aria-pressed="false"><img src="assets/voice-tom.png" alt=""><span>Tom</span></button>
+            <button type="button" class="focus-person" data-focus="nana" aria-pressed="false"><img src="assets/voice-nana.png" alt=""><span>娜娜</span></button>
+          </div>
+        </article>
+        <article class="bento-card bento-deploy">
+          <div class="bento-copy"><span class="bento-kicker">Deployment</span><h3>从浏览器，到牌桌。</h3><p>Nginx + Node.js + Socket.IO，Docker 分开部署。</p></div>
+          <div class="deploy-scene" aria-hidden="true"><span>浏览器</span><i></i><span>Nginx</span><i></i><span>Node.js</span></div>
+        </article>
+      </div>
+    </div>
+    <p class="music-notice"><strong>音乐说明</strong>：本页使用 music 文件夹中的示例曲目；音乐服务单独部署。曲目版权归原权利人所有，本站仅作非商业展示。</p>
+  </main>
+  <footer><div class="wrap foot"><span>©2026设计by · XHJ</span><div class="footer-records"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026055513号-2</a><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51011502001360" target="_blank" rel="noopener noreferrer">川公网安备51011502001360号</a></div><a class="footer-return" href="index.html">返回首页</a></div></footer>
+  <script src="script.js"></script>
+  <script src="game-props.js"></script>
+  <script src="music-demo.js"></script>
+  <script src="table-focus.js"></script>
+</body>
+</html>
