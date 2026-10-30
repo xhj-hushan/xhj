@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.SERVER_PASS }} # 你的服务器密码
           port: 8848
           script: |
-            TARGET_DIR="/root/xhj"
+            TARGET_DIR="/image/xhj"
             if [ ! -d "$TARGET_DIR" ]; then
               git clone https://github.com/xhj-hushan/xhj.git "$TARGET_DIR"
             fi
