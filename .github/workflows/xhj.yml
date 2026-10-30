@@ -17,6 +17,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}     # 你的服务器公网 IP
           username: ${{ secrets.SERVER_USER }} # 登录名，通常是 root
           password: ${{ secrets.SERVER_PASS }} # 你的服务器密码
+          port: 8848
           script: |
             # 1. 进入你存放代码的目录（如果你没克隆过，这里需要先 clone）
             cd /root/xhj || git clone https://github.com/xhj-hushan/xhj.git /root/xhj && cd /root/xhj
