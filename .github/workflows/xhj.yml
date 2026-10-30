@@ -26,8 +26,7 @@ jobs:
             
             # 3. 重新构建 Docker 镜像
             docker build -t xhj-homepage .
-            
-            # 4. 停止并删除旧容器，运行新容器（把 80:80 改成你需要的端口）
+          
             docker stop xhj-web || true
             docker rm xhj-web || true
             docker run -d --name xhj-web -p 8888:80 xhj-homepage
