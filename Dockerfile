@@ -1,4 +1,4 @@
-FROM nginx:1.27-alpine
+FROM nginx:latest
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY index.html projects.html blog.html life.html about.html styles.css script.js game-props.js music-demo.js table-focus.js life-gallery.js /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
