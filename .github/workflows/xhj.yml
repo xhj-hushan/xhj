@@ -20,7 +20,7 @@ jobs:
           port: 8848
           script: |
             # 1. 进入你存放代码的目录（如果你没克隆过，这里需要先 clone）
-            cd /root/xhj || git clone https://github.com/xhj-hushan/xhj.git /root/xhj && cd /root/xhj
+            cd /root/xhj || git clone git@github.com:xhj-hushan/xhj.git
             
             # 2. 拉取最新代码
             git pull origin main
