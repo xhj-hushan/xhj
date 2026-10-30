@@ -19,15 +19,13 @@ jobs:
           password: ${{ secrets.SERVER_PASS }} # 你的服务器密码
           port: 8848
           script: |
-            # 1. 进入你存放代码的目录（如果你没克隆过，这里需要先 clone）
-            cd /root/xhj || git clone git@github.com:xhj-hushan/xhj.git
-            
-            # 2. 拉取最新代码
+            TARGET_DIR="/root/xhj"
+            if [ ! -d "$TARGET_DIR" ]; then
+              git clone https://github.com/xhj-hushan/xhj.git "$TARGET_DIR"
+            fi
+            cd "$TARGET_DIR"
             git pull origin main
-            
-            # 3. 重新构建 Docker 镜像
             docker build -t xhj-homepage .
-          
             docker stop xhj-web || true
             docker rm xhj-web || true
             docker run -d --name xhj-web -p 8888:80 xhj-homepage
